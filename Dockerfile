@@ -10,6 +10,7 @@ RUN apk add npm
 # Install Grunt
 RUN npm install -g grunt-cli
 RUN npm install grunt
+RUN npm install grunt-env
 RUN npm install grunt-contrib-concat
 RUN npm install grunt-contrib-copy
 RUN npm install grunt-contrib-cssmin
