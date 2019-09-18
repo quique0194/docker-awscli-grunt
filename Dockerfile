@@ -16,6 +16,7 @@ RUN npm install grunt-contrib-copy
 RUN npm install grunt-contrib-cssmin
 RUN npm install grunt-contrib-htmlmin
 RUN npm install grunt-contrib-uglify
+RUN npm install grunt-contrib-uglify-es
 RUN npm install grunt-contrib-watch
 
 # Define working directory.
