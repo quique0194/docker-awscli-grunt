@@ -3,24 +3,19 @@ FROM alpine
 MAINTAINER Jose Carrillo <quique0194@gmail.com>
 
 # Core dependencies
-RUN apk add python3
-RUN python3 -m pip install --upgrade awscli
-RUN apk add npm
+RUN apk add python3 npm && python3 -m pip install --upgrade awscli
 
 # Install Grunt
-RUN npm install -g grunt-cli
-RUN npm install grunt
-RUN npm install grunt-env
-RUN npm install grunt-contrib-concat
-RUN npm install grunt-contrib-copy
-RUN npm install grunt-contrib-cssmin
-RUN npm install grunt-contrib-htmlmin
-RUN npm install grunt-contrib-uglify
-RUN npm install grunt-contrib-uglify-es
-RUN npm install grunt-contrib-watch
+RUN npm install grunt \
+ && npm install grunt-env \
+ && npm install grunt-contrib-concat \
+ && npm install grunt-contrib-copy \
+ && npm install grunt-contrib-cssmin \
+ && npm install grunt-contrib-htmlmin \
+ && npm install grunt-contrib-uglify \
+ && npm install grunt-contrib-uglify-es \
+ && npm install grunt-contrib-watch \
+ && npm install -g grunt-cli
 
 # Define working directory.
 # WORKDIR /data
-
-# Define default command.
-CMD ["bash"]
